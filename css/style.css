@@ -1,0 +1,133 @@
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #f0f2fa;
+  color: #63687e;
+  transition: 0.3s, color 0.3s;
+  min-height: 100vh;
+}
+body.dark-mode {
+  background-color: #1e202a;
+  color: #ffffff;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+}
+header .theme-switch {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+header .theme-switch .switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+}
+header .theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+header .theme-switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 25px;
+  transition: 0.4s;
+}
+header .theme-switch::before {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  top: 87px;
+  right: 42px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+  z-index: 1;
+}
+
+input[type=checkbox] {
+  width: 40px;
+  height: 20px;
+  cursor: pointer;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:checked + .slider::before {
+  transform: translateX(25px);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  text-align: center;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+.card.facebook {
+  border-top: 4px solid #1877f2;
+}
+.card.twitter {
+  border-top: 4px solid #1da1f2;
+}
+.card.instagram {
+  border-top: 4px solid #e1306c;
+}
+.card.youtube {
+  border-top: 4px solid #ff0000;
+}
+.card span.up {
+  color: green;
+}
+.card span.down {
+  color: red;
+}
+body.dark-mode .card {
+  background-color: #252b43;
+}
+
+.overview {
+  padding: 2rem;
+}
+.overview .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+.overview .card {
+  margin-top: 20px;
+  background-color: #ffffff;
+}
+body.dark-mode .overview .card {
+  background-color: #252b43;
+}
+.overview .card .head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.overview .card .foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}/*# sourceMappingURL=style.css.map */
